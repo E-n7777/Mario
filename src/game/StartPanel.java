@@ -28,6 +28,4 @@ public class StartPanel extends JPanel {
         history.setBounds(250, 300, 200, 30);
         add(history);
     }
-
-
 }

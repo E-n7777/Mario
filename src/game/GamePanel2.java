@@ -1,6 +1,8 @@
 package game;
 
+import bean.Brick;
 import bean.Character;
+import util.StaticValue;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,18 +10,17 @@ import java.awt.*;
 import static util.Creat.*;
 
 /**
- * description ： 第一关的游戏面板
- * date : 2025/2/26 15:21
+ * description ： 第二关的游戏面板
+ * date : 2025/3/1 17:40
  */
-public class GamePanel extends JLayeredPane {
+public class GamePanel2 extends JLayeredPane {
     private Character marioLabel; // 马里奥的 JLabel
     private int score = 0; // 分数显示
     private int health = 3; // 生命值显示
     private JLabel scoreLabel;
     private JLabel healthLabel;
 
-    //游戏面板初始化
-    public GamePanel() {
+    public GamePanel2() {
         //绝对布局
         setLayout(null);
         //面板获得焦点
@@ -33,11 +34,12 @@ public class GamePanel extends JLayeredPane {
         add(marioLabel);
 
         //食人花初始化
-        add(createFlower(300, 350));
-        add(createFlower(450, 350));
+        add(createFlower(100, 350));
+        add(createFlower(320, 350));
         // 初始化金币
-        add(createCoin(200, 350));
-        add(createCoin(500, 350));
+        add(createCoin(400, 210));
+        add(createCoin(350, 350));
+        add(createCoin(560, 250));
 
         // 初始化分数和生命值显示
         scoreLabel = new JLabel("分数: " + score);
@@ -51,23 +53,27 @@ public class GamePanel extends JLayeredPane {
         add(healthLabel);
 
         // 初始化惊喜方块
-        add(createSurprise(140, 300));
-        add(createSurprise(280, 300));
-        add(createSurprise(320, 300));
-        add(createSurprise(300, 230));
-        //初始化砖块
-        add(createBrick(260,300));
-        add(createBrick(300,300));
-        add(createBrick(340,300));
-        //启动游戏循环
-        //new Thread(this).start();
+        add(createSurprise(290, 230));
+        add(createSurprise(210, 300));
+
+        //初始化平台
+        createPlat(170, 300, 20, 20, 2);
+        createPlat(230, 300, 20, 20, 4);
+        createPlat(310, 230, 20, 20, 5);
+        for (Brick b : StaticValue.platBricks)
+            add(b);
+
+        //初始化楼梯
+        createStairs(480, 350, 20, 20, 5);
+        for (Brick b : StaticValue.stairBricks)
+            add(b);
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(Toolkit.getDefaultToolkit()
-                        .getImage("E://重邮课程//实训//大二//Mario//src//image//scene//bg_1.jpg")
+                        .getImage("E://重邮课程//实训//大二//Mario//src//image//scene//bg_2.jpg")
                 , 0, 0, getWidth(), getHeight(), this);
     }
 }

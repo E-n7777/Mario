@@ -6,13 +6,15 @@ import javax.swing.*;
 
 public class GameFrame extends JFrame {
 
-    public GameFrame(){
+    public GameFrame() {
         this.setSize(StaticValue.WIDTH, StaticValue.HEIGHT);
         this.setTitle("跑酷小游戏");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-
-        this.add(new GamePanel());
+        if (StaticValue.LEVEL == 1)
+            this.add(new GamePanel());
+        else if (StaticValue.LEVEL == 2)
+            this.add(new GamePanel2());
     }
 
     public static void main(String[] args) throws Exception {

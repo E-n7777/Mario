@@ -23,6 +23,10 @@ public abstract class Obstacle extends JLabel {
         super(text);
     }
 
+    public Obstacle(String text, int horizontalAlignment) {
+        super(text, horizontalAlignment);
+    }
+
     public Obstacle(String text, int x, int y) {
         super(text);
         this.x = x;
