@@ -10,13 +10,15 @@ import java.awt.*;
 public abstract class Obstacle extends JLabel {
     public int x,y;
     public int width,height;
-    public Image img;
-    public Obstacle(int x, int y, int width, int height,Image img) {
+    public Obstacle(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        this.img=img;
+    }
+
+    public Obstacle(Icon image) {
+        super(image);
     }
 
     public Obstacle(String text) {

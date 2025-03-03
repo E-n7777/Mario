@@ -2,6 +2,7 @@ package bean;
 
 import util.FlowerState;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class Flower extends Obstacle {
@@ -9,6 +10,11 @@ public class Flower extends Obstacle {
 
     public Flower(String text,FlowerState state) {
         super(text);
+        this.state = state;
+    }
+
+    public Flower(Icon image, FlowerState state) {
+        super(image);
         this.state = state;
     }
 
