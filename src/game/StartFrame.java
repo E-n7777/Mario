@@ -19,11 +19,6 @@ public class StartFrame extends JFrame {
 
         //创建游戏面板对象，并添加到窗体上去
         StartPanel startPanel = new StartPanel();
-        //this.addKeyListener(panel);//谁实现就监听谁
         add(startPanel);
-    }
-
-    public static void main(String[] args) {
-        new StartFrame().setTitle("跑酷小游戏");
     }
 }
