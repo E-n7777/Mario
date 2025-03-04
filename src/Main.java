@@ -1,3 +1,4 @@
+import game.GameFrame;
 import game.StartFrame;
 
 import javax.swing.*;
